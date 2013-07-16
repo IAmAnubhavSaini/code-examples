@@ -2,6 +2,7 @@
 #define GENERICSTACK 1
 #include<stdio.h>
 #include<stdlib.h>
+//datatypes
 struct type{
   T_UNKNOWN, T_INT, T_CHAR, T_STRING
 };
@@ -20,6 +21,22 @@ struct generic_stack_node{
 };
 typedef struct generic_stack_node GenericStackNode;
 
+//functions definitions
+GenericObject *create_generic_object(void *val, char* id, TYPE type);
+GenericObject *create_default_generic_object(void *val);
+GenericStackNode *create_generic_stack_node(GenericObject *obj, char *id);
+GenericStackNode * create_default_generic_stack_node(GenericObject *obj);
+GenericStackNode * create_generic_stack_node_from_value(void *Val);
+GenericObject * append_object_by_values(void *after, void *it);//append `it` after `after`
+GenericObject * prepend_object_by_values(void *before, void *it);//append `it` before `before`
+GenericObject *append_object(GenericObject *after, GenericObject *it);
+GenericObject * prepend_object(GenericObject *before, GenericObject *it);
+GenericStackNode * append_node_by_objects(GenericObject * after, GenericObject *it);
+GenericStackNode * prepend_node_by_objects(GenericObject *before, GenericObject *it);
+GenericStackNode * append_node(GenericStackNode *after, GenericStackNode *it);
+GenericStackNode * prepend_node(GenricStackNode *before, GenericStackNode *it);
+
+//declarations
 GenericObject *create_generic_object(void *val, char* id, TYPE type){
   GenericObject *new_obj = (GenericObject*) malloc(sizeof(GenericObject));
   new_obj->Id = id;
@@ -55,7 +72,6 @@ GenericStackNode * create_generic_stack_node_from_value(void *Val){
 
   
 }
-
 GenericObject * append_object_by_values(void *after, void *it){//append `it` after `after`
   GenericObject *After = create_default_generic_object(after);
   GenericObject *It = create_default_generic_object(it);
