@@ -1,35 +1,73 @@
 #ifndef BINARYTREE
-#define BINARYTREE 1
+#define BINARYTREE
 #include<stdio.h>
 #include<stdlib.h>
 
+/* Positions */
+enum POS{
+  Unset
+  , Left
+  , Right
+  , Root
+};
+/* Integer tree */
+typedef struct int_tree ITN;
 struct int_tree{
   int Value;
-  struct int_tree * Left;
-  struct int_tree * Right;
+  ITN * Left;
+  ITN * Right;
+  POS Pos;
 };
-typedef struct int_tree ITreeNode;
+ITN * ITN_Create(int value){
+  ITN * new_node = (ITN *)malloc(sizeof(ITN));
+  new_node->Value = value;
+  new_node->Left = NULL;
+  new_node->Right = NULL;
+  new_node->Pos = Unset;
+  return new_node;
+}
+ITN * ITN_Append(ITN * child, ITN * parent, POS pos){
+  if(parent == NULL) return child;
+  if(child == NULL) {
+    child = ITN_Create(0);
+  }
+  if(pos == Left){
+    parent -> Left = child;
+  }
+  if(pos == Right){
+    parent -> Right = child;
+  }
+  return parent;
+}
+void ITN_Print_Infix(ITN *root){
+  if(root == NULL){
+    return;
+  }
+  if( root->Left != NULL){
+    ITN_Print_Infix(root -> Left);
+  }
+  //if root->Left is NULL, this is the leftmost node, print.
+  printf(" %d ", root->Value);
+  if( root->Right != NULL ){
+    ITN_Print_Infix(root->Right);
+  }
+}
+/* String tree */
+typedef struct string_tree STN;
 struct string_tree{
   char *Value;
-  struct string_tree * Left;
-  struct string_tree * Right;
+  STN * Left;
+  STN * Right;
+  POS Pos;
 };
-typedef struct string_tree STreeNode;
 
-STreeNode * create_stree_node(char* value){
-  STreeNode * new_node = (STreeNode*)malloc(sizeof(STreeNode));
+STN * STN_Create(char* value){
+  STN * new_node = (STN*)malloc(sizeof(STN));
   new_node->Value = value;
   new_node->Left = NULL;
   new_node->Right = NULL;
-
+  new_node->Pos = Unset;
   return new_node;
 }
-ITreeNode *create_itree_node(int value){
-  ITreeNode * new_node = (ITreeNode *)malloc(sizeof(ITreeNode));
-  new_node->Value = value;
-  new_node->Left = NULL;
-  new_node->Right = NULL;
 
-  return new_node;
-}
 #endif
