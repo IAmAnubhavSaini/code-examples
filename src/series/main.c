@@ -4,12 +4,14 @@ void Check2_IsIntNegative();
 void Check1_IsIntOdd();
 void Check3_FindSumAndAverageOfIntArray();
 void Check4_AddSubTraceIntMatrices();
+void Check5_IsStringPalindromedrome();
 
 int main(){
     // Check1_IsIntOdd();
     // Check2_IsIntNegative();
     // Check3_FindSumAndAverageOfIntArray();
-    Check4_AddSubTraceIntMatrices();
+    // Check4_AddSubTraceIntMatrices();
+    Check5_IsStringPalindromedrome();
     return 0;
 }
 
@@ -126,5 +128,38 @@ void Check4_AddSubTraceIntMatrices()
         printf("\n");
     }
 #include "limit_4.h"
+
+}
+
+void Check5_IsStringPalindromedrome()
+{
+        char * first = "Anubhav Saini";
+        char * palin1 = "aaa";
+        char * palin2 = "abba";
+        char * nonpalin = "aabb";
+
+        if(IsStringPalindrome(first)){
+                printf("%s is a palindrome\n", first);
+        } else {
+                printf("%s is not a palindrome\n", first);
+        }
+
+        if(IsStringPalindrome(palin1)){
+                printf("%s is a palindrome\n", palin1);
+        } else {
+                printf("%s is not a palindrome\n", palin1);
+        }
+
+        if(IsStringPalindrome(palin2)){
+                printf("%s is a palindrome\n", palin2);
+        } else {
+                printf("%s is not a palindrome\n", palin2);
+        }
+
+        if(IsStringPalindrome(nonpalin)){
+                printf("%s is a palindrome\n", nonpalin);
+        } else {
+                printf("%s is not a palindrome\n", nonpalin);
+        }
 
 }
