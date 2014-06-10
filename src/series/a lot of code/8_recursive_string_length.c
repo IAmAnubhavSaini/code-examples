@@ -8,10 +8,11 @@ int StringLengthRecursive ( char * string )
 
         return StringLengthRecursive(string +1) +1;
 }
-
+/*
 int main ( )
 {
         int len = StringLengthRecursive("Anubhav Saini");
         printf("Length : %d\n", len);
         return 0;
 }
+*/

@@ -7,6 +7,7 @@
  */
 
 #include "4.h"
+#include "common.h"
 
 void AddIntMatrices ( int A[ROWS][COLS], int B[ROWS][COLS], int Sum[ROWS][COLS], int m, int n )
 {
@@ -29,7 +30,7 @@ void SubIntMatrices ( int A[ROWS][COLS], int B[ROWS][COLS], int Diff[ROWS][COLS]
         }
 }
 
-int TraceIntMatrix ( int A[ROWS][COLS], m, n )
+int TraceIntMatrix ( int A[ROWS][COLS], int m, int n )
 {
         int trace = 0;
         int i = 0, j = 0;

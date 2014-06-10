@@ -5,13 +5,15 @@ void Check1_IsIntOdd();
 void Check3_FindSumAndAverageOfIntArray();
 void Check4_AddSubTraceIntMatrices();
 void Check5_IsStringPalindromedrome();
+void Check9_TransposeIntMatrix();
 
 int main(){
-    // Check1_IsIntOdd();
+    // Check1_IsIntOdd()
     // Check2_IsIntNegative();
     // Check3_FindSumAndAverageOfIntArray();
     // Check4_AddSubTraceIntMatrices();
-    Check5_IsStringPalindromedrome();
+    // Check5_IsStringPalindromedrome();
+    Check9_TransposeIntMatrix();
     return 0;
 }
 
@@ -163,3 +165,52 @@ void Check5_IsStringPalindromedrome()
         }
 
 }
+
+void Check9_TransposeIntMatrix()
+{
+#include "4.h"
+    int i = 0, j = 0;
+    int A [ROWS][COLS]; // = { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} };
+    int Ta [COLS][ROWS]; //  transpose of A
+    int TTa [ROWS][COLS]; // transpose of transpose of A, should be A.
+
+
+    printf("\n Initializing Arrays \n");
+
+    for(i = 0; i < ROWS; ++i){
+        for(j = 0; j < COLS; ++j){
+            A[i][j] = ROWS*i+ (j+1);
+        }
+    }
+
+    printf("\n Array A\n");
+
+    for(i = 0; i < ROWS; ++i){
+        for(j = 0; j < COLS; ++j){
+            printf("%4d",A[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("\n A' ( A's Transpose )\n");
+    TransposeIntMatrix ( A, Ta, ROWS, COLS);
+
+    for ( i = 0; i < COLS; ++i ) {
+        for ( j = 0; j < ROWS; ++j ) {
+            printf(" %3d ", Ta[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("\n A'' ( Transpose of A's Transpose )\n");
+    TransposeIntMatrix(Ta, TTa, COLS, ROWS);
+
+    for ( i = 0; i < ROWS; ++i ) {
+        for ( j = 0; j < COLS; ++j ) {
+            printf(" %3d ", TTa[i][j]);
+        }
+        printf("\n");
+    }
+#include "limit_4.h"
+}
+
