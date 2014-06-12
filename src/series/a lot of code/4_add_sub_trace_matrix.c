@@ -4,6 +4,9 @@
  *
  * theory: addition and subtraction can be performed on two matrices if their
  *         dimensions are equal and performed on corresponding elements.
+ * Blogged at : http://the-diary-of-a-wimpy-coder.blogspot.com/2014/06/4-prove-that-sum-of-traces-of-matrices.html
+ * GitHub Project : https://github.com/IAmAnubhavSaini/code-examples
+ * This file : https://github.com/IAmAnubhavSaini/code-examples/blob/master/src/series/a%20lot%20of%20code/4_add_sub_trace_matrix.c
  */
 
 #include "4.h"

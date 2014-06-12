@@ -3,7 +3,8 @@
  * this file contains code that finds transpose of a matrix
  *
  * theory: replace rows with columns and vice versa
- *
+ * GitHub : https://github.com/IAmAnubhavSaini/code-examples
+ * this file : https://github.com/IAmAnubhavSaini/code-examples/blob/master/src/series/a%20lot%20of%20code/9_transpose_of_matrix.c
  */
 
 #include "4.h"
