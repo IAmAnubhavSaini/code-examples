@@ -11,6 +11,6 @@
 
 #ifdef COLS
 #undef COLS
-#endif 
+#endif
 
 #endif
